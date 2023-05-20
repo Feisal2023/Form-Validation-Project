@@ -1,45 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Open+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
-* {
+* { 
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
 
 body {
-  font-family:  'Inter', sans-serif;
-  background-color: aliceblue;
+  font-family: 'Inter', sans-serif;
+  background: aliceblue;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
+
 .container {
-  background: #f9faf9;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
   width: 400px;
+  display: none;
 }
-
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+}
 .container h1 {
   text-align: center;
   margin: 50px;
 }
+
 form {
   padding: 30px 40px;
 }
-.form-control  {
-  padding-bottom: 5px;
+
+.form-control {
   margin-bottom: 10px;
+  padding-bottom: 5px;
   position: relative;
 }
 .form-control label {
   display: block;
   margin-bottom: 5px;
 }
-
 .form-control input {
-  width: 100%;
+  width: 90%;
   padding: 10px 15px;
   font-size: 16px;
   border: 1px solid #a7a1a0;
@@ -53,6 +61,7 @@ form {
   bottom: 0px;
   visibility: hidden;
 }
+
 .form-control i.fa-close {
   position: absolute;
   color: #ec5a36;
@@ -71,33 +80,58 @@ form {
   visibility: hidden;
 }
 
+.form-control.success  input{
+  border:  1px solid #31ca15;
+}
 
+.form-control.success  i.fa-check{
+  visibility: visible;
+}
+.form-control.error  input{
+  border:  1px solid #ec5a36;
+}
+.form-control.error   small{
+  visibility: visible;
+}
+.form-control.error   i.fa-close{
+  visibility: visible;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+}
 .btn {
+  display: block;
   width: 100%;
-  color: #fff;
+  font-size: 14px;
   text-align: center;
+  color: #fff;
   padding: 10px 20px;
-  background: #ff7e33;
-  border: 2px solid #ff7e33;
   cursor: pointer;
   border-radius: 4px;
-  border: none;
-  display: block;
-  outline: none;
+  border: 2px solid #ff7e33;
+  background: #ff7e33;
+ outline: none;
+}
+
+.login-btn {
+  position: absolute;
+  top: 10px;
+  right: 28%;
+  /* width: 30px; */
   font-size: 14px;
-}
-.form-control.success input {
-  border: 1px solid #31ca15;
-}
-.form-control.success   i.fa-check  {
-  visibility: visible;
-}
-.form-control.error input {
-  border: 1px solid #ec5a36;
-}
-.form-control.error small {
-  visibility: visible;
-}
-.form-control.error  i.fa-close {
-  visibility: visible;
+  text-align: center;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid #ff7e33;
+  background: #ff7e33;
+  outline: none;
 }
