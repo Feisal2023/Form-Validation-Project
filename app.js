@@ -6,8 +6,31 @@ const password = document.querySelector('#password');
 const confirmPassword = document.querySelector('#confirmPassword');
 const loginBtn = document.querySelector('.login-btn');
 const container = document.querySelector('.container');
+const eyeIcon = document.querySelector('.toggle-img-1');
+const eyeIcon2 = document.querySelector('.toggle-img-2');
 
 // Functions 
+eyeIcon.onclick = function () {
+  if(password.type == "password") {
+    password.type = 'text'; 
+    eyeIcon.src = 'img/eye-open.png';
+  } else {
+    password.type = 'password';
+    eyeIcon.src = 'img/eye-close.png';
+  }
+
+}
+eyeIcon2.onclick = function () {
+  if(confirmPassword.type == "password") {
+    confirmPassword.type = 'text'; 
+    eyeIcon2.src = 'img/eye-open.png';
+  } else {
+    confirmPassword.type = 'password';
+    eyeIcon2.src = 'img/eye-close.png';
+  }
+
+}
+
 // showError function
 function showError(input, message) {
   const formControl = input.parentElement;
@@ -65,11 +88,13 @@ function confirmPasswordMatching(p1, p2) {
   }
 }
 function toggleContainerVisibility() {
-  container.classList.toggle('show');
+  container.classList.add('show');
+
 }
 
 loginBtn.addEventListener('click', () => {
-  toggleContainerVisibility();
+  // container.classList.add('show');
+  toggleContainerVisibility()
 });
 
 
@@ -81,11 +106,28 @@ form.addEventListener('submit', (e) => {
   checkLength(password,  8,  20);
   checkEmail(email);
   confirmPasswordMatching(password, confirmPassword);
-  const isSuccess = document.querySelector('.form-control.success').length === 4;
-  if(isSuccess) {
-    container.style.display = 'none';
+  const hasError = document.querySelector('.form-control.error');
+
+  if (hasError) {
+    container.classList.add('show');
   } else {
-   toggleContainerVisibility();
+    container.classList.add('hidden');
+       // Show success message and hide login button
+       const successBox = document.createElement('div');
+       successBox.classList.add('success-box');
+       successBox.innerHTML = `
+         <i class="fa fa-check"></i>
+         <p>Successfully logged in!</p>
+       `;
+       document.body.appendChild(successBox);
+   
+       loginBtn.classList.add('hidden');
+       
+       // Delay hiding the success message and showing the login button again
+       setTimeout(() => {
+         successBox.remove();
+         loginBtn.classList.remove('hidden');
+       }, 3000);
   }
     
 });

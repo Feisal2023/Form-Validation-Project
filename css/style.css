@@ -47,7 +47,7 @@ form {
   margin-bottom: 5px;
 }
 .form-control input {
-  width: 90%;
+  width: 100%;
   padding: 10px 15px;
   font-size: 16px;
   border: 1px solid #a7a1a0;
@@ -97,7 +97,8 @@ form {
   visibility: visible;
 }
 
-.password-toggle {
+.toggle-img-1, 
+.toggle-img-2 {
   position: absolute;
   top: 50%;
   right: 20px;
@@ -134,4 +135,20 @@ form {
   border: 2px solid #ff7e33;
   background: #ff7e33;
   outline: none;
+}
+
+.success-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: green;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.success-box i {
+  font-size: 48px;
+  margin-bottom: 10px;
 }

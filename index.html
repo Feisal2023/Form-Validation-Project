@@ -30,14 +30,15 @@
     <div class="form-control">
       <label for="password">Password</label>
       <input type="password" class="password" id="password" placeholder="Please Enter Password">
-      <span class="password-toggle" onclick="togglePasswordVisibility()"><i class="fa fa-eye"></i></span>      <i class="fa fa-check"></i>
+      <img class="toggle-img-1"   src="img/eye-close.png" alt="">
+      <i class="fa fa-check"></i>
       <i class="fa fa-close"></i>
       <small>Error Message</small>
     </div>
     <div class="form-control">
       <label for="confirmPassword">Confirm Password</label>
       <input type="password" class="confirmPassword" id="confirmPassword" placeholder="Please Confirm Password">
-      <span class="password-toggle" onclick="togglePasswordVisibility()"><i class="fa fa-eye"></i></span>
+      <img class="toggle-img-2"  src="img/eye-close.png" alt="">
       <i class="fa fa-check"></i>
       <i class="fa fa-close"></i>
       <small>Error Message</small>
@@ -45,6 +46,12 @@
     <button type="submit" class="btn">Submit</button>
   </form>
 </div>
+
+  <!-- Success Box -->
+  <div class="success-box hidden">
+    <!-- <i class="fa fa-check"></i>
+    <p>Successfully logged in!</p> -->
+  </div>
 <script src="app.js"></script>
 </body>
 </html>
