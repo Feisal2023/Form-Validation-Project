@@ -57,7 +57,7 @@ form {
   position: absolute;
   color: #31ca15;
   top: 35px;
-  right: 10px;
+  right: 5px;
   bottom: 0px;
   visibility: hidden;
 }
@@ -66,7 +66,7 @@ form {
   position: absolute;
   color: #ec5a36;
   top: 35px;
-  right: 10px;
+  right: 5px;
   bottom: 0px;
   visibility: hidden;
 }
@@ -151,4 +151,11 @@ form {
 .success-box i {
   font-size: 48px;
   margin-bottom: 10px;
+}
+
+/* mobile */
+@media(max-width: 500px) {
+  .container {
+    width: 80px;
+  }
 }
